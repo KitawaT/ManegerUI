@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
+import MainContent from "./MainContent.jsx";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -52,10 +53,12 @@ const App = () => {
         </button>
       </div>
     </div>
+    <MainContent />
     </div>
     
-
+    
     </>
+    
   );
 };
 
