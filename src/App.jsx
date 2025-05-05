@@ -19,7 +19,7 @@ const App = () => {
   };
   return (
     <>
-    <div className="min-h-screen bg-gray-800 dark:bg-gray-50 text-white dark:text-black transition-all duration-300">
+    <div className="min-h-screen bg-gray-800 dark:bg-gray-50 text-white dark:text-black transition-all duration-300 pt-5">
       {/* <label
         htmlFor="check"
         className="bg-gray-100 relative w-20 h-10 rounded-full cursor-pointer inline-block"
@@ -38,7 +38,7 @@ const App = () => {
         peer-checked:bg-rose-600 peer-checked:translate-x-10"
         ></span>
       </label> */}
-      <div className="content-center justify-between mt-5 mx-4 md:mx-8 flex bg-blue-400 items-center">
+      <div className="content-center justify-between mx-4 md:mx-8 flex bg-blue-400 items-center">
       <div className="">
         <img 
         src={darkMode ? "src/images/logo.svg"  : "src/images/logo-light.svg"}
@@ -52,6 +52,9 @@ const App = () => {
             className="w-6 h-6"/>
         </button>
       </div>
+    </div>
+    <div className="mt-5 justify-center text-center">
+      <h1 className="text-5xl font-bold text-gray-50 dark:text-black transition-all duration-300">Extention List</h1>
     </div>
     <MainContent />
     </div>
