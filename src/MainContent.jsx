@@ -34,44 +34,57 @@ function ButtonFilter() {
   return (
     <>
       <div>
-        <div className="p-4 flex justify-center items-center">
-          <div className="flex flex-wrap gap-2 justify-center items-center">
-            {categories.map((cat) => (
-              <button
-                key={cat.value}
-                onClick={() => setSelectedCategory(cat.value)}
-                className={`px-4 py-2 rounded-full border font-bold cursor-pointer ${
-                  selectedCategory === cat.value
-                    ? "bg-[#f35b56] text-[#110921]"
-                    : "bg-[#2f354b] text-gray-50 hover:text-gray-400"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+        <div className="lg:ml-10 mt-5 flex flex-col lg:flex-row lg:justify-between lg:items-center">
+          {/* ส่วนของ Extention List */}
+          <h1 className="text-5xl font-bold text-gray-50 dark:text-[#0c1639] transition-all duration-300 text-center lg:text-left">
+            Extention List
+          </h1>
+
+          {/* ส่วนของปุ่ม */}
+          <div className="p-4 flex justify-center items-center lg:justify-end lg:mr-10">
+            <div className="flex flex-wrap gap-2 justify-center items-center">
+              {categories.map((cat) => (
+                <button
+                  key={cat.value}
+                  onClick={() => setSelectedCategory(cat.value)}
+                  className={`px-4 py-2 rounded-full border font-bold cursor-pointer ${
+                    selectedCategory === cat.value
+                      ? "bg-[#f35b56] text-[#110921]"
+                      : "bg-[#2f354b] dark:bg-[#fefefe] dark:text-[#110921] text-gray-50 hover:text-gray-400"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="p-4">
+        <div className="p-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredData.map((item) => (
             <div
               key={item.id}
-              className="grid grid-cols-3 gap-4 bg-[#1f2535] rounded-2xl p-3 outline-red-50 outline-1 mb-4"
+              className="grid grid-cols-3 gap-4 bg-[#1f2535] dark:bg-[#fcfdff] rounded-2xl p-3 outline-red-50 outline-1 mb-4 dark:outline-1 dark:outline-[#110921]"
             >
-              {/* พื้นที่สำหรับ icon */}
+
               <div className="flex justify-center items-center col-span-1">
-                <img src={item.icon} alt={item.title} className="max-w-full max-h-full" />
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="max-w-full max-h-full"
+                />
               </div>
 
-              {/* พื้นที่สำหรับ title และ text */}
-              <div className="flex flex-col justify-center col-span-2">
-                <h1 className="text-4xl font-bold text-white break-words">{item.title}</h1>
+              <div className="flex flex-col justify-center col-span-2 ">
+                <h1 className="text-4xl font-bold text-white break-words dark:text-[#110921]">
+                  {item.title}
+                </h1>
                 <p className="text-sm text-gray-400 break-words">{item.text}</p>
               </div>
 
-              <div className="flex justify-center items-center col-span-1">
+              <div className="flex flex-row justify-between items-center col-span-3 mt-4">
                 <button
-                  className="bg-[#f35b56] text-white px-4 py-2 rounded-full font-bold mr-2"
+                  className="bg-[#f35b56] text-white px-4 py-2 rounded-full font-bold flex justify-center items-center mr-4"
                   onClick={() =>
                     setItems((prevItems) =>
                       prevItems.filter((i) => i.id !== item.id)
@@ -80,13 +93,13 @@ function ButtonFilter() {
                 >
                   Remove
                 </button>
-              </div>
-              <div></div>
-              <div>
+
                 <label
                   htmlFor={`check-${item.id}`}
                   className={`relative w-20 h-10 rounded-full cursor-pointer inline-block ${
-                    item.category === "inactive" ? "bg-[#525868]" : "bg-[#f35957]"
+                    item.category === "inactive"
+                      ? "bg-[#525868]"
+                      : "bg-[#f35957]"
                   }`}
                 >
                   <input
@@ -101,7 +114,7 @@ function ButtonFilter() {
 
                   <span
                     className="w-8 h-8 bg-gray-50 absolute top-1 left-1 rounded-full transition-all duration-500
-                  peer-checked:bg-rose-600 peer-checked:translate-x-10"
+                    peer-checked:bg-rose-600 peer-checked:translate-x-10"
                   ></span>
                 </label>
               </div>

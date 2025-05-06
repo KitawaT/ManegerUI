@@ -19,7 +19,7 @@ const App = () => {
   };
   return (
     <>
-    <div className="min-h-screen bg-gray-800 dark:bg-gray-50 text-white dark:text-black transition-all duration-300 pt-5">
+    <div className="min-h-screen bg-[#091540] bg-linear-to-t to-[#040918] dark:bg-[#EEF8F9] dark:to-[EBF2FC] text-white dark:text-black transition-all duration-300 pt-5 md:px-10 lg:px-25">
       {/* <label
         htmlFor="check"
         className="bg-gray-100 relative w-20 h-10 rounded-full cursor-pointer inline-block"
@@ -38,27 +38,24 @@ const App = () => {
         peer-checked:bg-rose-600 peer-checked:translate-x-10"
         ></span>
       </label> */}
-      <div className="content-center justify-between mx-4 md:mx-8 flex bg-blue-400 items-center">
+      <div className="content-center justify-between mx-4 md:mx-8 flex bg-[#1f2535] dark:bg-[#EBF2FC] items-center rounded-xl">
       <div className="">
         <img 
         src={darkMode ? "src/images/logo.svg"  : "src/images/logo-light.svg"}
         alt="logo" className="p-1"/>
       </div>
-      <div className="w-10 h-10 bg-green-600 flex justify-center mr-2 rounded-xl ">
+      <div className="w-10 h-10 bg-[#2f354b] dark:bg-[#eeeeee]  flex justify-center mr-2 rounded-xl ">
         <button onClick={toggleDarkMode} className="w-full h-full rounded-xl flex justify-center items-center">
           <img 
-            src={darkMode ? "src/images/icon-sun.svg"  : "src/images/icon-moon.svg"}
+            src={darkMode ? "src/images/icon-moon.svg"  : "src/images/icon-sun.svg"}
             alt="" 
             className="w-6 h-6"/>
         </button>
       </div>
     </div>
-    <div className="mt-5 justify-center text-center">
-      <h1 className="text-5xl font-bold text-gray-50 dark:text-black transition-all duration-300">Extention List</h1>
-    </div>
+    
     <MainContent />
     </div>
-    
     
     </>
     
